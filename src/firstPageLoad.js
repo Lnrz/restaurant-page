@@ -1,3 +1,6 @@
+import generateHomepage from "./homepage";
+import generateMenu from "./menu.js"
+
 function firstLoadPage() {
 
     const header = document.createElement("header");
@@ -65,7 +68,7 @@ function firstLoadPage() {
     content.appendChild(baseDiv);
     content.appendChild(footer);
 
-    //chiama la funzione che crea la homepage
+    generateMenu();
 }
 
 export default firstLoadPage;
