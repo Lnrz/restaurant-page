@@ -1,5 +1,5 @@
 import generateHomepage from "./homepage";
-import generateMenu from "./menu.js"
+import addEventsToTabs from "./switchTab";
 
 function firstLoadPage() {
 
@@ -42,12 +42,15 @@ function firstLoadPage() {
     navFirstImg.setAttribute("src", "../images/homeIcon.png");
     navFirstImg.setAttribute("alt", "Home Icon");
     navFirstImg.setAttribute("class", "selected");
+    navFirstImg.setAttribute("data-switch", "home");
     navFirstBlackline.setAttribute("class", "blackline");
     navSecondImg.setAttribute("src", "../images/menuIcon.png");
     navSecondImg.setAttribute("alt", "Menu Icon");
+    navSecondImg.setAttribute("data-switch", "menu");
     navSecondBlackline.setAttribute("class", "blackline");
     navThirdImg.setAttribute("src", "../images/staffIcon.png");
     navThirdImg.setAttribute("alt", "Staff Icon");
+    navThirdImg.setAttribute("data-switch", "staff");
     nav.setAttribute("class", "flexbox flexboxSpaceEvenlyMainAxis flexColumn");
     dynamicDiv.setAttribute("class", "fullWidthHeight flexbox flexboxCenterCrossAxis flexboxCenterMainAxis");
     navDiv.setAttribute("class", "flexItemDefault relative");
@@ -68,7 +71,8 @@ function firstLoadPage() {
     content.appendChild(baseDiv);
     content.appendChild(footer);
 
-    generateMenu();
+    addEventsToTabs();
+    generateHomepage();
 }
 
 export default firstLoadPage;
